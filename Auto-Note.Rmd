@@ -1,16 +1,17 @@
 ---
 always_allow_html: yes
+title: '| Research Note | '
 output:
   html_document:
     fig_width: 7
     number_sections: no
     self_contained: yes
-  pdf_document: default
-  word_document: default
 editor_options: 
   chunk_output_type: console
 ---
 <head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 ```{css css_Styles, echo=FALSE}
  <style> 
     @media {
@@ -25,13 +26,20 @@ editor_options:
   height: 1050px;
   margin: auto;
 }
-
+title {
+  font-size: 12px;
+  font-family: "Cambria", sans-serif;
+  font-weight: bold;
+  font-variant: small-caps;
+  text-align: center;
+}
 body { /* Normal  */
   font-size: 14px;
   font-family: "Cambria", sans-serif;
   line-height: 15px ;
   text-align: justify;
 }
+
 td {  /* Table  */
   font-size: 10px;
   font-family: "Cambria", sans-serif;
@@ -82,90 +90,60 @@ h4 { /* Header 4 */
 }
 </style>
 ```
-```{css css_Setup, echo=FALSE}
+```{css css_Setup, eval=TRUE, echo=FALSE}
  <script type="text/x-mathjax-config"> 
     MathJax.Hub.Config({ 
         "HTML-CSS": { scale: 100, linebreaks: { automatic: false } }, 
         TeX: { equationNumbers: { autoNumber: "AMS" } }});
 </script>
 ```
-
-</head>
 <body>
 <div class="header"  style="width:  775px; padding: 85px;">
+<title = "ArtEco.ca | Note" />
 <h1>Open-Ready [Self-Contained]<br></h1>
 <h2>Diversité et impacts<br></h2>
 <h3>Xavier Lemyre</h3>
-<h4>Policy Research Group
-<br>26 mai 2020</h4>
+<h4><br>February 2021</h4>
+
+Copyright © 2021
+<br>
+Open ◎ 2021 X
+
+<a href="LICENSE.txt">License</a>
+<br>
 
 </div><br>
 <P style="page-break-after: always">
-
 <div style="border: 3px solid Gray; border-style: ridge; width: 775px; height: 1000px; padding: 85px; page-break-after: always">
 
-
-Remarque: ce document est conçu afin d’être accessible, interactif et reproductible. La recherche ici incluse représente les vues, perspectives et opinions de l’auteur seulement et à lui reviennent fautes ou omissions. 
-
-
-<br>
-
-Copyright © 2020
-<br>
-Open ◎ 2020 X
-
-Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
-
-The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
 
 
 <br><br>
 
 
-</div><br>
-<div style="border: 3px solid Gray; border-style: ridge; width: 775px; height: 1000px; padding: 85px; page-break-after: always">
-
-
 ```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
+knitr::opts_chunk$set(echo = TRUE,message = FALSE, warning = FALSE, paged.print = FALSE)
 ```
 
 
 ## Open-Ready [Self-Contained]
 
-<iframe
-    width="600"
-    height="300"
-    src="">
-</iframe>
-<br>
-
 ```{r}
 is.R() #? #utf8
 ```
 
-```{r, echo = FALSE}
-cat("THE SOFTWARE IS PROVIDED `AS IS`, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.")
-```
 
-
-```{r knitr_setup, include = FALSE}
-knitr::opts_chunk$set(echo = FALSE)
-#Packages used in this file:
-library(knitr)
-
-```
 
 </div><br>
 <div style="border: 3px solid Gray; border-style: ridge; width: 775px; height: 1000px; padding: 85px; page-break-after: always">
 
 
-# Diversity and Impact Measurement in Canada
+# Diversity and Impact Measurement
 
 
-```{r Environment, echo=FALSE, eval=TRUE, message=FALSE, warning=FALSE, paged.print=FALSE}
+```{r Environment, echo=FALSE, eval=TRUE, dev='svg'}
 rm(list = ls())
-I <- 1000
+I <- 250
 M <- data.frame(W = c(1),
                 X = c((1:I)/I),
                 Y = c(1/2),
@@ -178,12 +156,6 @@ M.XL
 plot(x = M$X, y = M$Y*z)
 ```
 
-<iframe
-    width="150"
-    height="150"
-    src="">
-</iframe>
-
 
 
 </div><br>
@@ -191,7 +163,9 @@ plot(x = M$X, y = M$Y*z)
 
 
 # References
-```{r References, echo=FALSE, eval=TRUE, message=FALSE, warning=FALSE, paged.print=FALSE}
+
+```{r References, echo=FALSE, eval=TRUE}
+
 Ref <- matrix("", ncol = 5, nrow = 1, byrow = TRUE)
 #Ref <- c("", "", "", "", "")
 colnames(Ref) <- c("Author", "Year", "Title","Editors","pages")
